@@ -1,0 +1,42 @@
+version: '3.4'
+
+networks:
+    cp.clientes-network:
+        driver: bridge 
+
+services:
+  cp.clientes.database:
+    image: postgres:12
+    container_name: cp.clientes.database
+    environment:
+      POSTGRES_PASSWORD: /run/secrets/db_password
+      PGDATA: /data/postgres/sgp
+    volumes:
+      - db_data:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - cp.clientes-network
+    secrets:
+      - db_password
+
+  cp.clientes.api:
+    image: ${DOCKER_REGISTRY-}cp.clientes
+    build:
+      context: .
+      dockerfile: Adapter/Driver/CP.Clientes.Api/Dockerfile
+    ports:
+        - "5001:443"
+    networks:
+        - cp.clientes-network
+    environment:
+      - DbConnection=Host=cp.clientes.database;Port=5432;Pooling=true;Database=SGP;User Id=postgres;Password=/run/secrets/db_password;
+ #   depends_on: # no vs para mac trava o debug por algum motivo deixar desativado por enquanto
+   #   - cp.clientes.database
+
+secrets:
+   db_password:
+     file: ./infra/db_password.txt
+
+volumes:
+    db_data:
