@@ -27,7 +27,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Install dotnet-coverage tool
-      run: dotnet tool install -g dotnet-coverage
+      run: dotnet tool install --global dotnet-coverage
 
     - name: Install dependencies
       run: dotnet restore  src/app/CP.Clientes/CP.Clientes.sln
@@ -35,7 +35,7 @@ jobs:
     - name: Build the project
       run: dotnet build --no-restore --configuration Release  src/app/CP.Clientes/CP.Clientes.sln
 
-    - name: Run tests
+    - name: Run tests and collect code coverage
       run: dotnet test src/app/CP.Clientes/CP.Clientes.sln --configuration Release --collect:"XPlat Code Coverage"
 
     - uses: chill-viking/dotnet-sonar-scanner@v2
@@ -45,6 +45,6 @@ jobs:
         sonar-org-key: 'postechfiap33'
         token: ${{ secrets.GITHUB_TOKEN }}
         sonar-token: ${{ secrets.SONAR_TOKEN }}
-        working-directory: './src/app/CP.Clientes/CP.Clientes.sln'
+        working-directory: './src/app/CP.Clientes'
         checkout: false
 
