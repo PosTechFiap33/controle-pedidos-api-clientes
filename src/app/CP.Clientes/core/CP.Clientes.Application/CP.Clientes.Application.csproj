@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="UseCases\" />
+    <None Remove="UseCases\Pedidos\" />
+    <None Remove="DTOs\" />
+    <None Remove="UseCases\Clientes\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UseCases/Clientes/" />
+    <Folder Include="UseCases\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="UseCases\Clientes\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CP.Clientes.Domain\CP.Clientes.Domain.csproj" />
+    <ProjectReference Include="..\..\common\CP.Clientes.CrossCutting\CP.Clientes.CrossCutting.csproj" />
+  </ItemGroup>
+</Project>
