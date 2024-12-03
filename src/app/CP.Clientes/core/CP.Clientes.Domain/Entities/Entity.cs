@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CP.Clientes.Domain.Entities
 {
+    [ExcludeFromCodeCoverage]
     public abstract class Entity 
     {
         public Guid Id { get; set; }

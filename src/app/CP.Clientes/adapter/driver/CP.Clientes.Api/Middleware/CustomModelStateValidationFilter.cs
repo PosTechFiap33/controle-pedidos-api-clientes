@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CP.Clientes.Api.Middleware
 {
-
+    [ExcludeFromCodeCoverage]
     public class CustomModelStateValidationFilter : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext context)

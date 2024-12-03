@@ -1,9 +1,11 @@
-﻿using System.Net;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CP.Clientes.Api.Base
 {
+    [ExcludeFromCodeCoverage]
     public abstract class MainController : ControllerBase
     {
         protected ICollection<string> Erros = new List<string>();

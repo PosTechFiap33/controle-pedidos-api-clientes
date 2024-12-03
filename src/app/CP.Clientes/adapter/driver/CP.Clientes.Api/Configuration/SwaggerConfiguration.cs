@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using CP.Clientes.Api.Middleware;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.OpenApi.Models;
 
 namespace CP.Clientes.Api.Configuration
 {
+    [ExcludeFromCodeCoverage]
     public static class SwaggerConfiguration
     {
 

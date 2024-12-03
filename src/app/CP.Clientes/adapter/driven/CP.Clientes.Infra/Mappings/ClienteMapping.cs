@@ -1,9 +1,11 @@
 ﻿using CP.Clientes.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CP.Clientes.Infra.Mappings
 {
+    [ExcludeFromCodeCoverage]
     public class ClienteMapping : IEntityTypeConfiguration<Cliente>
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)

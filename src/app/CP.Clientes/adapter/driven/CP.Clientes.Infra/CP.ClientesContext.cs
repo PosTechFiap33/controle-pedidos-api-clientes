@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using CP.Clientes.Domain.Base;
 using CP.Clientes.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CP.Clientes.Infra
 {
+    [ExcludeFromCodeCoverage]
     public class CPClientesContext : DbContext, IUnitOfWork
     {
         public CPClientesContext(DbContextOptions options) : base(options)

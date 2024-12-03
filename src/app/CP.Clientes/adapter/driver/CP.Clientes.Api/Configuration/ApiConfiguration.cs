@@ -3,9 +3,11 @@ using CP.Clientes.Api.Middleware;
 using CP.Clientes.IOC.DependencyInjections;
 using CP.Clientes.Infra.Configuration;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CP.Clientes.Api.Configuration
 {
+    [ExcludeFromCodeCoverage]
     public static class ApiConfiguration
     {
         public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)

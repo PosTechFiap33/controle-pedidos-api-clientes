@@ -1,11 +1,12 @@
-﻿using System.Net;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
 using System.Text.Json;
 using CP.Clientes.Domain.Base;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CP.Clientes.Api.Middleware
 {
-
+    [ExcludeFromCodeCoverage]
     public class ExceptionHandlingMiddleware
     {
         private readonly RequestDelegate _next;
