@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "driver", "driver", "{FF2880
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "driven", "driven", "{1ED6241C-C7DC-4ABD-9C10-5C2BCEDC806D}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DBB12C83-058C-4222-8B52-13A2764DDFD8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{664DC37E-73AF-4133-948B-C919FD4965B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CP.Clientes.Infra", "adapter\driven\CP.Clientes.Infra\CP.Clientes.Infra.csproj", "{90EC0B0E-AB8F-4497-80F3-BDB4C9A5CE87}"
@@ -39,10 +37,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DBB12C83-058C-4222-8B52-13A2764DDFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBB12C83-058C-4222-8B52-13A2764DDFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBB12C83-058C-4222-8B52-13A2764DDFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBB12C83-058C-4222-8B52-13A2764DDFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90EC0B0E-AB8F-4497-80F3-BDB4C9A5CE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{90EC0B0E-AB8F-4497-80F3-BDB4C9A5CE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90EC0B0E-AB8F-4497-80F3-BDB4C9A5CE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
