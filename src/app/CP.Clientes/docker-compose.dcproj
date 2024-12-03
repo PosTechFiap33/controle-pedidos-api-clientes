@@ -6,7 +6,7 @@
     <ProjectGuid>{DBB12C83-058C-4222-8B52-13A2764DDFD8}</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>controlepedido.api</DockerServiceName>
+    <DockerServiceName>cp.clientes.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
