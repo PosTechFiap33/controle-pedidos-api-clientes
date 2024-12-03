@@ -31,7 +31,7 @@ namespace CP.Clientes.IntegrationTests.Features.Cliente
 #line 1 "Cliente.feature"
 #line hidden
         
-        public ClienteFeature(ClienteFeature.FixtureData fixtureData, CP.Clientes_IntegrationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ClienteFeature(ClienteFeature.FixtureData fixtureData, CP_Clientes_IntegrationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();

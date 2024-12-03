@@ -12,7 +12,7 @@ public class IntegrationTestFixture : IDisposable
 {
     public WebApplicationFactory<Program> Factory { get; }
     public HttpClient Client { get; }
-    public CP.ClientesContext context { get; private set; }
+    public CPClientesContext context { get; private set; }
 
     public IntegrationTestFixture()
     {
@@ -27,20 +27,20 @@ public class IntegrationTestFixture : IDisposable
                 builder.ConfigureServices(async services =>
                 {
                     // Remove o contexto de banco de dados existente, se houver
-                    var descriptor = services.SingleOrDefault(d => d.ServiceType == typeof(DbContextOptions<CP.ClientesContext>));
+                    var descriptor = services.SingleOrDefault(d => d.ServiceType == typeof(DbContextOptions<CPClientesContext>));
                     if (descriptor != null)
                     {
                         services.Remove(descriptor);
                     }
 
-                    services.AddDbContext<CP.ClientesContext>(options =>
+                    services.AddDbContext<CPClientesContext>(options =>
                     {
                         options.UseInMemoryDatabase("InMemoryDbForTesting");
                     });
 
                     var serviceProvider = services.BuildServiceProvider();
 
-                    context = serviceProvider.GetService<CP.ClientesContext>();
+                    context = serviceProvider.GetService<CPClientesContext>();
                     context.Database.EnsureCreated();
                     await SeedDatabase();
                 });
