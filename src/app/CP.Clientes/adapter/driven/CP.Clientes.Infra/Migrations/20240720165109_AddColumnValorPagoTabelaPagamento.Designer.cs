@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CP.Clientes.Infra.Migrations
 {
-    [DbContext(typeof(CP.ClientesContext))]
+    [DbContext(typeof(CPClientesContext))]
     [Migration("20240720165109_AddColumnValorPagoTabelaPagamento")]
     partial class AddColumnValorPagoTabelaPagamento
     {

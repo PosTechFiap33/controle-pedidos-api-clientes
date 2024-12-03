@@ -1,6 +1,4 @@
 ﻿using CP.Clientes.Application.UseCases.Clientes;
-using CP.Clientes.Application.UseCases.Pedidos;
-using CP.Clientes.Application.UseCases.Produtos;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CP.Clientes.IOC.DependencyInjections

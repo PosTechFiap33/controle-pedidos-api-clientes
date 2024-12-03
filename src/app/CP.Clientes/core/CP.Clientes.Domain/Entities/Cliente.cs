@@ -9,7 +9,7 @@ namespace CP.Clientes.Domain.Entities
         public string Nome { get; private set; }
         public CPF Cpf { get; private set; }
         public Email Email { get; private set; }
-        public virtual ICollection<Pedido> Pedidos { get; private set; }
+        //public virtual ICollection<Pedido> Pedidos { get; private set; }
 
         public Cliente(string nome, string cpf, string email)
         {

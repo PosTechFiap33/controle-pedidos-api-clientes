@@ -7,10 +7,10 @@ namespace CP.Clientes.Infra.Repositories
 {
     public class ClienteRepository : IClienteRepository
 	{
-        private readonly CP.ClientesContext _context;
+        private readonly CPClientesContext _context;
         public IUnitOfWork UnitOfWork => _context;
 
-        public ClienteRepository(CP.ClientesContext context)
+        public ClienteRepository(CPClientesContext context)
         {
             _context = context;
         }
