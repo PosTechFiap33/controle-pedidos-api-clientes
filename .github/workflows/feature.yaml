@@ -1,0 +1,50 @@
+name: .NET Build and Test Workflow
+
+on:
+  push:
+    branches:
+    - feature**
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }} # Checkout para a branch atual
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Install dotnet-coverage tool
+      run: dotnet tool install -g dotnet-coverage
+
+    - name: Install dependencies
+      run: dotnet restore  src/app/CP.Clientes/CP.Clientes.sln
+
+    - name: Build the project
+      run: dotnet build --no-restore --configuration Release  src/app/CP.Clientes/CP.Clientes.sln
+
+    - name: Run tests
+      run: dotnet test src/app/CP.Clientes/CP.Clientes.sln --configuration Release --collect:"XPlat Code Coverage"
+
+    - uses: chill-viking/dotnet-sonar-scanner@v2
+      name: Scan and Publish
+      with:
+        sonar-project-key: 'PosTechFiap33_controle-pedidos-api-clientes'
+        sonar-org-key: 'postechfiap33'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        sonar-token: ${{ secrets.SONAR_TOKEN }}
+        working-directory: './src/app/CP.Clientes'
+        checkout: false
+
