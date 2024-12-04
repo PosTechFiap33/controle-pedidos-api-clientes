@@ -56,7 +56,7 @@ namespace CP.Clientes.IntegrationTests.Features
         }
 
         [Then(@"deverá ser retornado o status (.*)")]
-        public async void Thendeverserretornadoostatus(HttpStatusCode expectedStatus)
+        public async Task Thendeverserretornadoostatus(HttpStatusCode expectedStatus)
         {
             _response.StatusCode.Should().Be(expectedStatus);
         }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace CP.Clientes.IntegrationTests;
 
@@ -21,6 +22,7 @@ public class IntegrationTestFixture : IDisposable
             {
                 builder.ConfigureAppConfiguration((context, config) =>
                    {
+                       Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Testing");
                        context.HostingEnvironment.EnvironmentName = "Testing";
                    });
 
@@ -33,6 +35,7 @@ public class IntegrationTestFixture : IDisposable
                         services.Remove(descriptor);
                     }
 
+                    services.RemoveAll(typeof(DbContextOptions<CPClientesContext>));
                     services.AddDbContext<CPClientesContext>(options =>
                     {
                         options.UseInMemoryDatabase("InMemoryDbForTesting");

@@ -28,9 +28,9 @@ namespace CP.Clientes.Api.Configuration
             ).AddJsonOptions(options =>
                 options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-            services.AddDatabaseConfiguration(configuration);
-
             services.RegisterRepositories();
+
+            services.AddDatabaseConfiguration(configuration);
 
             services.RegisterServices();
 
